@@ -1,0 +1,17 @@
+[
+  {
+    "name": "hello-world",
+    "complete": "pending",
+    "dependsOn": "hello-province"
+  },
+  {
+    "name": "hello-province",
+    "complete": "pending",
+    "dependsOn": "hello-city"
+  },
+  {
+    "name": "hello-city",
+    "complete": "pending",
+    "dependsOn": null
+  }
+]
