@@ -22,3 +22,14 @@ All application files live in the app directory provided by the orchestrator. Cr
 Upon successful completion, In the feature file (`$FEATURE_FILE`) update the current story:
 - Set the `build` job status to `done`
 - Stop the agent
+
+## Logging
+
+At the very start, capture the start time via Bash: `date -u +%Y-%m-%dT%H:%M:%SZ`
+Track iterations: start at 0, increment each time you run the build command.
+When done, capture end time the same way.
+
+Respond with ONLY a JSON object (no other text):
+{"status":"success","startedAt":"<ISO>","finishedAt":"<ISO>","iterations":<N>,"error":null}
+
+On failure, set status to "failure" and error to a brief description.

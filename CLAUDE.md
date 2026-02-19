@@ -22,6 +22,8 @@ Skills to inject into subagents. The orchestrator reads this mapping and passes 
 |--------------------|------------------------------------|
 | `build-user-story` | `vercel-react-best-practices:full` |
 | `run-playwright`   | `webapp-testing`                   |
-| `run-lint`      |                                    |
+| `run-lint`         |                                    |
+| `run-typecheck`    |                                    |
+| `write-tests`      |                                    |
 
 
