@@ -45,6 +45,20 @@
           "status": "pending",
           "dependsOn": "playwright",
           "notes": ""
+        },
+        {
+          "name": "typecheck",
+          "agent": "run-typecheck",
+          "status": "pending",
+          "dependsOn": "lint",
+          "notes": ""
+        },
+        {
+          "name": "test",
+          "agent": "write-tests",
+          "status": "done",
+          "dependsOn": "typecheck",
+          "notes": ""
         }
       ]
     },
@@ -82,6 +96,20 @@
           "agent": "run-lint",
           "status": "pending",
           "dependsOn": "playwright",
+          "notes": ""
+        },
+        {
+          "name": "typecheck",
+          "agent": "run-typecheck",
+          "status": "pending",
+          "dependsOn": "lint",
+          "notes": ""
+        },
+        {
+          "name": "test",
+          "agent": "write-tests",
+          "status": "pending",
+          "dependsOn": "typecheck",
           "notes": ""
         }
       ]

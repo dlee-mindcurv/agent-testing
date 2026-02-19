@@ -46,7 +46,7 @@ Execute `cd $APP_DIR && npx playwright test`. If tests fail:
 - Fix the **application code directly related to this story** if the UI doesn't match acceptance criteria, OR fix the **test** if the assertion is wrong
 - Re-run until all tests pass
 
-If you have run the tests 3 times and they still fail, stop iterating. Set the `playwright` job to `"done"`.
+If you have run the tests 3 times and they still fail, stop iterating. Set the `playwright` job status to `"done"` and the job notes with a summary of the failures.
 
 ## CRITICAL: Status update
 
@@ -54,4 +54,13 @@ Upon successful completion, In the feature file (`$FEATURE_FILE`) update the cur
 - Set the `playwright` job status to `done`
 - Stop the agent
 
+## Logging
 
+At the very start, capture the start time via Bash: `date -u +%Y-%m-%dT%H:%M:%SZ`
+Track iterations: start at 0, increment each time you run the playwright command.
+When done, capture end time the same way.
+
+Respond with ONLY a JSON object (no other text):
+{"status":"success","startedAt":"<ISO>","finishedAt":"<ISO>","iterations":<N>,"error":null}
+
+On failure, set status to "failure" and error to a brief description.
