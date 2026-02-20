@@ -1,0 +1,65 @@
+{
+  "project": "TaskFlow",
+  "appDir": "./my-app",
+  "branchName": "feature/svg-rainbow",
+  "description": "An animated SVG rainbow arc displayed on the main page, rendered as concentric colored arcs using the classic ROYGBIV spectrum with a smooth fade-in animation on load.",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "SVG Rainbow Arc on Main Page",
+      "description": "As a user, I want a colorful SVG rainbow arc on the main page so that the application feels more visually delightful.",
+      "acceptanceCriteria": [
+        "A RainbowArc component is created that renders an inline SVG element (no external image files)",
+        "The SVG contains seven concentric semi-circular arcs representing the ROYGBIV spectrum: red (#FF0000), orange (#FF7F00), yellow (#FFFF00), green (#00FF00), blue (#0000FF), indigo (#4B0082), violet (#9400D3)",
+        "Each arc is a <path> element using an SVG arc command, with a stroke-width of 8px and no fill",
+        "The outermost arc (red) has a radius of approximately 150px, with each inner arc decreasing by 10px",
+        "The rainbow is horizontally centered on the page and placed below the main heading",
+        "The SVG has a viewBox that properly frames all arcs without clipping",
+        "The rainbow fades in on page load using a CSS opacity transition (0 to 1 over 1 second)",
+        "The component has data-testid='rainbow-arc' on the SVG element for testability",
+        "The SVG has role='img' and an aria-label of 'Decorative rainbow' for accessibility"
+      ],
+      "priority": 1,
+      "model": "sonnet",
+      "passes": false,
+      "notes": "",
+      "agents": [
+        {
+          "name": "build",
+          "agent": "build-user-story",
+          "status": "pending",
+          "dependsOn": null,
+          "notes": ""
+        },
+        {
+          "name": "playwright",
+          "agent": "run-playwright",
+          "status": "pending",
+          "dependsOn": "build",
+          "notes": ""
+        },
+        {
+          "name": "lint",
+          "agent": "run-lint",
+          "status": "pending",
+          "dependsOn": "playwright",
+          "notes": ""
+        },
+        {
+          "name": "typecheck",
+          "agent": "run-typecheck",
+          "status": "pending",
+          "dependsOn": "lint",
+          "notes": ""
+        },
+        {
+          "name": "test",
+          "agent": "write-tests",
+          "status": "pending",
+          "dependsOn": "typecheck",
+          "notes": ""
+        }
+      ]
+    }
+  ]
+}
