@@ -127,4 +127,4 @@ Read `$LOG_FILE`, append the new entries to the array, and write it back.
 6. Create PR (only if one doesn't already exist for `branchName`)
 
 ### Exit Claude
-- run `/exit`
+- Use the Exit tool to terminate this session
