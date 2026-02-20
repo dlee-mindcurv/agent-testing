@@ -26,4 +26,6 @@ Skills to inject into subagents. The orchestrator reads this mapping and passes 
 | `run-typecheck`    |                                    |
 | `write-tests`      |                                    |
 
+## Learnings
 
+- [run-playwright] US-001: Port 3000 was occupied by a different worktree's Next.js dev server (digital-clock), causing all tests to fail with "element(s) not found" because playwright was testing the wrong app. Kill conflicting servers before running tests when multiple worktrees share the same default port.
