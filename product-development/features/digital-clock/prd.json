@@ -22,41 +22,41 @@
       ],
       "priority": 1,
       "model": "haiku",
-      "passes": false,
+      "passes": true,
       "notes": "",
       "agents": [
         {
           "name": "build",
           "agent": "build-user-story",
-          "status": "pending",
+          "status": "done",
           "dependsOn": null,
           "notes": ""
         },
         {
           "name": "playwright",
           "agent": "run-playwright",
-          "status": "pending",
+          "status": "done",
           "dependsOn": "build",
           "notes": ""
         },
         {
           "name": "lint",
           "agent": "run-lint",
-          "status": "pending",
+          "status": "done",
           "dependsOn": "playwright",
           "notes": ""
         },
         {
           "name": "typecheck",
           "agent": "run-typecheck",
-          "status": "pending",
+          "status": "done",
           "dependsOn": "lint",
           "notes": ""
         },
         {
           "name": "test",
           "agent": "write-tests",
-          "status": "pending",
+          "status": "done",
           "dependsOn": "typecheck",
           "notes": ""
         }
@@ -74,41 +74,41 @@
       ],
       "priority": 2,
       "model": "haiku",
-      "passes": false,
+      "passes": true,
       "notes": "",
       "agents": [
         {
           "name": "build",
           "agent": "build-user-story",
-          "status": "pending",
+          "status": "done",
           "dependsOn": null,
           "notes": ""
         },
         {
           "name": "playwright",
           "agent": "run-playwright",
-          "status": "pending",
+          "status": "done",
           "dependsOn": "build",
           "notes": ""
         },
         {
           "name": "lint",
           "agent": "run-lint",
-          "status": "pending",
+          "status": "done",
           "dependsOn": "playwright",
           "notes": ""
         },
         {
           "name": "typecheck",
           "agent": "run-typecheck",
-          "status": "pending",
+          "status": "done",
           "dependsOn": "lint",
           "notes": ""
         },
         {
           "name": "test",
           "agent": "write-tests",
-          "status": "pending",
+          "status": "done",
           "dependsOn": "typecheck",
           "notes": ""
         }

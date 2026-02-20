@@ -5,7 +5,10 @@ tools: Read, Write, Edit, Bash, Glob, Grep
 model: sonnet
 ---
 
-Before starting, read `CLAUDE.md` for shared learnings from previous agent runs.
+Before starting, read `CLAUDE.md` for project architecture and the learnings file at `$LEARNINGS_FILE` (path provided by the orchestrator) for shared learnings from previous agent runs.
+
+**Write learnings**: If you encounter a non-obvious problem during iteration (e.g., a test fails for a reason unrelated to the acceptance criteria — focus issues, timing quirks, selector strategies), append a concise finding to `$LEARNINGS_FILE` after resolving it. Format: `- [run-playwright] <story-id>: <one-line finding>`. This helps future agent runs avoid the same pitfall.
+
 
 ## Skills
 
