@@ -1,5 +1,5 @@
 ---
-name: say-hello-command
+name: create-feature-from-json
 allowed-tools: Read, Write, Edit, Exit, Grep, Glob, Task, Bash
 argument-hint: [path to prd.json]
 ---
@@ -12,6 +12,7 @@ argument-hint: [path to prd.json]
 - Derive the feature-name from `$PRD_JSON` (e.g., for `product-development/features/pink-footer/prd.json`, the feature-name is `pink-footer`).
 - Derive the feature-directory from `$PRD_JSON` (e.g., for `product-development/features/pink-footer/prd.json`, the feature-directory is `product-development/features/pink-footer/`).
 - Set `$LOG_FILE` to `<feature-directory>/agent-log.json`
+- Set `$LEARNINGS_FILE` to `<feature-directory>/learnings.md`
 
 
 
@@ -81,6 +82,7 @@ If `freshStart` is `true` (or if `$LOG_FILE` doesn't exist), create/reset `$LOG_
      - Story's acceptance criteria
      - `Feature file: $PRD_JSON`
      - Application directory: `$APP_DIR`
+     - `$LEARNINGS_FILE` — the learnings file path, which may be in a worktree (for reading/writing learnings)
    - After agent dispatch response, capture: `BATCH_END=$(date -u +%Y-%m-%dT%H:%M:%SZ)`.
 
 # Write log entries
