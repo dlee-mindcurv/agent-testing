@@ -301,6 +301,28 @@ cmd_reset() {
   resolve_prd "$1"
   require_cmd jq
 
+  local feature_name branch_name
+  feature_name=$(feature_name_from_path "$1")
+  branch_name=$(read_prd_field "$PRD_JSON" .branchName)
+
+  # Tear down worktree and tmux session
+  cmd_cleanup "$feature_name"
+
+  # Delete the local feature branch
+  if [[ -n "$branch_name" ]] && git show-ref --verify --quiet "refs/heads/$branch_name"; then
+    git branch -D "$branch_name"
+    echo "Deleted branch: $branch_name"
+  fi
+
+  # Remove agent-log.json
+  local feature_dir
+  feature_dir="$(dirname "$PRD_JSON")"
+  if [[ -f "$feature_dir/agent-log.json" ]]; then
+    rm "$feature_dir/agent-log.json"
+    echo "Removed: $feature_dir/agent-log.json"
+  fi
+
+  # Reset prd.json state
   local tmp
   tmp=$(mktemp)
   jq '.userStories |= [.[] | .passes = false | .agents = [.agents[] | .status = "pending"]]' "$PRD_JSON" > "$tmp"
