@@ -25,7 +25,6 @@ Agents can receive external skill documents at dispatch time. The mapping is def
 | Agent | Skills |
 |-------|--------|
 | `build-user-story` | `vercel-react-best-practices:full` |
-| `run-playwright` | `webapp-testing` |
 
 Skills are resolved from `~/.agents/skills/`, `~/.claude/skills/`, or local `.agents/skills/` directories. Append `:full` to load the full `AGENTS.md` instead of the compact `SKILL.md`.
 
