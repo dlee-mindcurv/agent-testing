@@ -26,4 +26,7 @@ Skills to inject into subagents. The orchestrator reads this mapping and passes 
 | `run-typecheck`    |                                    |
 | `write-tests`      |                                    |
 
+## Learnings
 
+- [write-tests] US-001: When testing React components that use requestAnimationFrame for fade-in effects, mock RAF in beforeEach but use a separate test with a manually-triggered RAF callback to verify the opacity transition from 0 to 1.
+- [write-tests] US-001: SVG attribute stroke-width is rendered as a lowercase hyphenated attribute in JSDOM, so use getAttribute("stroke-width") rather than camelCase strokeWidth when querying path elements in tests.
